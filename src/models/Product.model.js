@@ -46,6 +46,10 @@ const productSchema = mongoose.Schema(
     //   type: mongoose.Schema.Types.ObjectId,
     //   ref: "Order",
     // },
+    categoryId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "category",
+    },
   },
   {
     timestamps: true,

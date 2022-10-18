@@ -78,3 +78,19 @@ export const updatedProduct = async (req, res) => {
     res.send({ message: error.message });
   }
 };
+export const getProductById = async (req, res) => {
+  console.log(req.params);
+  const productId = req.params.id;
+  console.log(productId);
+  if (!productId) {
+    res.send({ message: "Must have product Id!" });
+  }
+  try {
+    let product = await Product.findById(productId);
+    console.log(product);
+    if (product.error) res.send({ message: error.message });
+    res.send({ product });
+  } catch (error) {
+    res.send({ message: error.message });
+  }
+};

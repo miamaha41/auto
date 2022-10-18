@@ -17,11 +17,13 @@ const products = [
       "https://bizweb.dktcdn.net/thumb/large/100/364/158/products/product5.jpg?v=1569857958077",
       "https://bizweb.dktcdn.net/thumb/grande/100/364/158/products/product9.jpg?v=1569858570373",
     ],
+    categoryId: "634cbea2347716a9a63cf70d",
     saleFlash: "20",
     desc: 'Michelin Energy XM2 195/70R14 Tires have long life and high fuel efficiency, providing maximum safety for your daily travel needs. Rolling resistance is reduced by 8% to reduce fuel consumption. Back-and-forth bridging technology enhances the stiffness of the spike block. With increased rigidity, the tread block is less free to move, reducing tire wear Rate The linkage blocks with "cross-bridging technique" limit flexibility, prevent the tire...',
   },
   {
     // types: "accessory",
+    categoryId: "634cbea2347716a9a63cf70e",
     name: "Accessory KUMHO ECSTA",
     quantity: 10,
     brand: "KIA",
@@ -43,6 +45,7 @@ const products = [
   },
   {
     // types: "smartDevice",
+    categoryId: "634cbea2347716a9a63cf70f",
     name: "RADIO Ô TÔ",
     quantity: 10,
     // currentPrice: "1200000",
@@ -63,6 +66,7 @@ const products = [
     desc: "Color LCD display, clear and bright, dynamic Bluetooth connection. Built-in microphone, support hands-free calls Digital high-quality FM stereo radio, stores up to 18 FM presets (frequency: 87.5-108 MHz). Repeat/Random/Intro play Digital Clock display Support music file playback from USB disk/SD card Support audio: MP3/WMA/APE/FLAC/WAV, etc AUX audio input and L/R RCA audio output jacks Remote control with full functions, more convenient and simple to use. NOTE: This product does not support CD, VCD, DVD disc playback. Specifications: Color: Black Material: Plastic Voltage: 12V Output power: 4x60W Bluetooth version: 3.0 Bluetooth distance: 10 meters Function: Bluetooth, handsfree, FM..",
   },
   {
+    categoryId: "634cbea2347716a9a63cf710",
     // types: "smartDevice",
     name: "Amazon Cloud Cam Security Camera LCD HD 1080P",
     quantity: 10,
@@ -85,6 +89,7 @@ const products = [
   },
   {
     // types: "smartDevice",
+    categoryId: "634cbea2347716a9a63cf710",
     name: "Screen LCD Auto 1080p",
     quantity: 10,
     // currentPrice: "1300000",
@@ -106,6 +111,8 @@ const products = [
     desc: "Features: 1920 x1080 30fps video Support Max.32GB TF Card Support full HD video transmission G-Sensor: Support Seamless loop recording Support Motion Detection Support Wide Dynamic Range 170 Degree Angle Lens 2.4 Inch High Resolution LCD 12 Mage Pixels IR Night Vision Auto power off function Automatically turn on/off function Power supply: Built-in battery-powered/USB power supply Specification: Screen Size : 2.4 inch, 1080P HD image quality Photo Format : JPEG Type : Portable",
   },
   {
+    categoryId: "634cbea2347716a9a63cf70f",
+
     // types: "smartDevice",
     name: "Radio auto 2",
     quantity: 10,
@@ -129,7 +136,8 @@ const products = [
     desc: "Color LCD display, clear and bright, dynamic Bluetooth connection. Built-in microphone, support hands-free calls Digital high-quality FM stereo radio, stores up to 18 FM presets (frequency: 87.5-108 MHz). Repeat/Random/Intro play Digital Clock display Support music file playback from USB disk/SD card Support audio: MP3/WMA/APE/FLAC/WAV, etc AUX audio input and L/R RCA audio output jacks Remote control with full functions, more convenient and simple to use. NOTE: This product does not support CD, VCD, DVD disc playback. Specifications: Color: Black Material: Plastic Voltage: 12V Output power: 4x60W Bluetooth version: 3.0 Bluetooth distance: 10 meters Function: Bluetooth, handsfree, FM...",
   },
   {
-    types: "steeringWheel",
+    categoryId: "634cbea2347716a9a63cf70d",
+    // types: "steeringWheel",
     name: "Steering Wheel",
     quantity: 10,
     brand: "MoMo",
@@ -152,6 +160,7 @@ const products = [
   },
   {
     // types: "tire",
+    categoryId: "634cbea2347716a9a63cf70d",
     name: "Wheel rim",
     quantity: 10,
     brand: "KIA",
@@ -172,6 +181,7 @@ const products = [
     desc: "Lốp Xe Michelin Energy XM2 195/70R14 có tuổi thọ và khả năng tiết kiệm nhiên liệu cao, mang lại an toàn tối đa cho nhu cầu di chuyển hàng ngày của bạn. Lực cản lăn giảm 8% giúp giảm tiêu hao nhiên liệu. Công nghệ kỹ thuật bắc cầu qua lại tăng cường độ cứng cho khối gai. Với độ cứng được tăng cường, khối gai ít di chuyển tự do, giảm tỷ lệ mòn lốp Các khối liên kết với “kỹ thuật bắc cầu qua lại” làm hạn chế tính mềm dẻo, ngăn lốp...",
   },
   {
+    categoryId: "634cbea2347716a9a63cf70d",
     // types: "accessory",
     name: "Oil Castrol Magnatec 10W40 (4L)",
     quantity: 10,
@@ -196,6 +206,7 @@ const products = [
   {
     // types: "accessory",
     name: "Lubricating oil BRIGGS",
+    categoryId: "634cbea2347716a9a63cf70d",
     quantity: 10,
     brand: "BRIGGS",
     // currentPrice: "500000",

@@ -2,6 +2,7 @@ import { Router } from "express";
 import {
   createProducts,
   deletedProduct,
+  getProductById,
   getProducts,
   insertedProduct,
   updatedProduct,
@@ -15,11 +16,13 @@ const router = Router();
  */
 router.get("/", getProducts);
 
+router.get("/:id", getProductById);
 /**
  * @router POST /product/createProducts
  * @description Create new Product collection
  * @access Public
  */
+
 router.post("/createProducts", createProducts);
 
 /**
