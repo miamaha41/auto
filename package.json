@@ -9,9 +9,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon --inspect src/server.js",
-    "authServer": "nodemon authServer.js",
-    "start": "node src/server.js"
+    "server": "nodemon --inspect index.js",
+    "start": "node index.js"
   },
   "author": "Hai Yen",
   "license": "ISC",

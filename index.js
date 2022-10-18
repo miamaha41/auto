@@ -1,12 +1,11 @@
 import express from "express";
 import "dotenv/config";
-import productRouter from "./routes/v1/Product.Router.js";
-import orderRouter from "./routes/v1/Order.Router.js";
-import userRouter from "./routes/v2/User.Router.js";
-import categoryRouter from "./routes/v2/Category.Router.js";
-// import { connectDB } from "./config/mongoDb.js";
+import productRouter from "./src/routes/v1/Product.Router.js";
+import orderRouter from "./src/routes/v1/Order.Router.js";
+import userRouter from "./src/routes/v2/User.Router.js";
+import categoryRouter from "./src/routes/v2/Category.Router.js";
 import cors from "cors";
-import { handleError, showError } from "./middlewares/handleError.js";
+import { handleError, showError } from "./src/middlewares/handleError.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
