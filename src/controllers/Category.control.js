@@ -6,7 +6,6 @@ export const getCategories = async (req, res) => {
     const listCategory = await Category.find();
     res.send({ listCategory });
   } catch (error) {
-    ``;
     res.send({ message: error.message });
   }
 };

@@ -1,6 +1,6 @@
 import createHttpError from "http-errors";
 import JWT from "jsonwebtoken";
-import { client } from "../services/redis.js";
+// import { client } from "../services/redis.js";
 export const signToken = async (userId, secret, expire, setRedis) => {
   return new Promise((resolve, reject) => {
     const payload = { userId };
@@ -9,16 +9,16 @@ export const signToken = async (userId, secret, expire, setRedis) => {
     };
     JWT.sign(payload, secret, options, (err, token) => {
       if (err) return reject(createHttpError(err));
-      if (setRedis)
-        client.set(
-          userId.toString(),
-          token,
-          "EX",
-          365 * 24 * 60 * 60,
-          (err, reply) => {
-            if (err) return reject(createHttpError.InternalServerError());
-          }
-        );
+      // if (setRedis)
+      //   client.set(
+      //     userId.toString(),
+      //     token,
+      //     "EX",
+      //     365 * 24 * 60 * 60,
+      //     (err, reply) => {
+      //       if (err) return reject(createHttpError.InternalServerError());
+      //     }
+      //   );
       resolve(token);
     });
   });
@@ -33,11 +33,11 @@ export const verifyRefreshToken = (refreshToken) => {
         if (err) {
           return reject(err);
         }
-        client.get(payload.userId, (err, reply) => {
-          if (err) return reject(createHttpError.InternalServerError());
-          if (refreshToken === reply) return resolve(payload);
-          return reject(createHttpError.Unauthorized());
-        });
+        // client.get(payload.userId, (err, reply) => {
+        //   if (err) return reject(createHttpError.InternalServerError());
+        //   if (refreshToken === reply) return resolve(payload);
+        //   return reject(createHttpError.Unauthorized());
+        // });
       }
     );
   });

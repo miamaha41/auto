@@ -1,3 +1,4 @@
+import createHttpError from "http-errors";
 import Product from "../models/Product.model.js";
 import products from "../utilities/product.js";
 
@@ -90,18 +91,44 @@ export const getProductById = async (req, res) => {
     res.send({ message: error.message });
   }
 };
-export const getProductByName = async (req, res) => {
+export const getProductByName = async (req, res, next) => {
   const name = req.query.name;
   console.log(name);
   if (!name) {
     res.send({ message: "Must have product name!" });
   }
   try {
-    let product = await Product.find().select({ name: name });
+    let product = await Product.find({ name });
     console.log(product);
-    if (product.error) res.send({ message: error.message });
+    if (product.length === 0) {
+      next(createHttpError.NotFound("Not find any product!"));
+    }
     res.send({ product });
   } catch (error) {
     res.send({ message: error.message });
+    next(error);
+  }
+};
+export const paginationProduct = async (req, res, next) => {
+  try {
+    const { page, limit } = req.query;
+    console.log(page, limit);
+    const products = await Product.find({ ...req.query })
+      // We multiply the "limit" variables by one just to make sure we pass a number and not a string
+      .limit(limit * 1)
+      .skip((page - 1) * limit)
+      // We sort the data by the date of their creation in descending order (user 1 instead of -1 to get ascending order)
+      .sort({ createdAt: -1 });
+
+    // Getting the numbers of products stored in database
+    const count = await Product.countDocuments();
+
+    return res.status(200).json({
+      products,
+      totalPages: Math.ceil(count / limit),
+      currentPage: page,
+    });
+  } catch (err) {
+    next(err);
   }
 };

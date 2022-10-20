@@ -6,6 +6,7 @@ import {
   getProductByName,
   getProducts,
   insertedProduct,
+  paginationProduct,
   updatedProduct,
 } from "../../controllers/Product.control.js";
 const router = Router();
@@ -16,7 +17,8 @@ const router = Router();
  * @access Public
  */
 router.get("/", getProducts);
-
+router.get("/search", getProductByName);
+router.get("/pagination", paginationProduct);
 router.get("/:id", getProductById);
 
 /**
