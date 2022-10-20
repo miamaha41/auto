@@ -10,7 +10,7 @@ export const createUser = async (req, res, next) => {
     const isExist = await User.findOne({ username: username });
     if (isExist) {
       throw createError.Conflict(
-        `${username} is have been already registered! `
+        `${username} is have been already registered. Please try again!`
       );
     }
     const user = new User({
