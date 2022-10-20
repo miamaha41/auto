@@ -36,7 +36,9 @@ export const login = async (req, res, next) => {
     }
     const isValid = await user.isCheckPassword(password);
     if (!isValid) {
-      throw createError.Unauthorized();
+      throw new createError.Unauthorized(
+        `Password of ${username} not correct. Please try again!`
+      );
     }
     const accessToken = await signToken(
       user._id,

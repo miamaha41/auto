@@ -6,7 +6,11 @@ const categorySchema = new mongoose.Schema(
     //   type: "Number",
     //   required: true,
     // },
-    name: {
+    img: {
+      type: String,
+      required: true,
+    },
+    title: {
       type: String,
       required: true,
     },
