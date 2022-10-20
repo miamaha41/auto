@@ -19,7 +19,7 @@ export const createUser = async (req, res, next) => {
       email,
     });
     const savedUser = await user.save();
-    return res.json({ status: 200, registered: savedUser });
+    return res.send({ status: 200, registered: savedUser });
   } catch (error) {
     next(error);
   }
@@ -48,7 +48,7 @@ export const login = async (req, res, next) => {
       "1y",
       true
     );
-    res.json({ accessToken, refreshToken });
+    res.send({ accessToken, refreshToken });
   } catch (error) {
     next(error);
   }
@@ -60,5 +60,5 @@ export const getLists = async (req, res, next) => {
     },
     { username: "def" },
   ];
-  res.json({ listUsers });
+  res.send({ listUsers });
 };
