@@ -30,7 +30,9 @@ export const login = async (req, res, next) => {
     const { username, password } = req.body;
     const user = await User.findOne({ username: username });
     if (!user) {
-      throw new createError.NotFound("User not registered!");
+      throw new createError.NotFound(
+        `${username} has been not registered yet!`
+      );
     }
     const isValid = await user.isCheckPassword(password);
     if (!isValid) {
