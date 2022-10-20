@@ -3,7 +3,7 @@ import Joi from "joi";
 
 const userValidate = (data) => {
   const userSchema = Joi.object({
-    username: Joi.string().lowercase().required(),
+    username: Joi.string().lowercase().required().min(6).max(30),
     email: Joi.string()
       .pattern(
         /([a-zA-Z0-9]+)([_.-{1}])?([a-zA-Z0-9]+)@([a-zA-Z0-9]+)([.])([a-zA-Z.]+)/
