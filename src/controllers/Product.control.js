@@ -72,7 +72,7 @@ export const updatedProduct = async (req, res) => {
         new: true,
       }
     );
-    if (updateProduct.error) res.send({ message: error.message });
+    if (updateProduct.errors) res.send({ message: error.message });
     res.send({ updateProduct, message: "Product was updated!" });
   } catch (error) {
     res.send({ message: error.message });
@@ -87,6 +87,21 @@ export const getProductById = async (req, res) => {
   }
   try {
     let product = await Product.findById(productId);
+    console.log(product);
+    if (product.error) res.send({ message: error.message });
+    res.send({ product });
+  } catch (error) {
+    res.send({ message: error.message });
+  }
+};
+export const getProductByName = async (req, res) => {
+  const name = req.query.name;
+  console.log(name);
+  if (!name) {
+    res.send({ message: "Must have product name!" });
+  }
+  try {
+    let product = await Product.find().select({ name: name });
     console.log(product);
     if (product.error) res.send({ message: error.message });
     res.send({ product });

@@ -5,7 +5,7 @@ import { signToken } from "../services/jwt.js";
 
 export const createUser = async (req, res, next) => {
   try {
-    const { username, password } = req.body;
+    const { username, password, email } = req.body;
     validateUser(req.body);
     const isExist = await User.findOne({ username: username });
     if (isExist) {

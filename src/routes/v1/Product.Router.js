@@ -3,6 +3,7 @@ import {
   createProducts,
   deletedProduct,
   getProductById,
+  getProductByName,
   getProducts,
   insertedProduct,
   updatedProduct,
@@ -17,6 +18,7 @@ const router = Router();
 router.get("/", getProducts);
 
 router.get("/:id", getProductById);
+
 /**
  * @router POST /product/createProducts
  * @description Create new Product collection
