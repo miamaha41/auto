@@ -19,8 +19,8 @@ app.use("/user", userRouter);
 app.use("/product", productRouter);
 app.use("/order", orderRouter);
 app.use("/category", categoryRouter);
-app.get("/brand", brandRouter);
-app.get("/cart", cartRouter);
+app.use("/brand", brandRouter);
+app.use("/cart", cartRouter);
 // app.get("/pagination", paginationProduct);
 app.use(handleError, showError);
 app.listen(PORT, () => {
