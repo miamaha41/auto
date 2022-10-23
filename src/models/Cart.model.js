@@ -6,11 +6,12 @@ const cartSchema = new Schema({
   products: [
     {
       productId: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: "products",
       },
       quantity: Number,
     },
   ],
 });
-export default Cart = newMongoDBConn.model("cart", cartSchema);
+const Cart = newMongoDBConn.model("cart", cartSchema);
+export default Cart;
