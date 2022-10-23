@@ -111,18 +111,34 @@ export const getProductByName = async (req, res, next) => {
 };
 export const paginationProduct = async (req, res, next) => {
   try {
-    const { page, limit } = req.query;
+    const { page, limit, le, ge, brand } = req.query;
+    let filter = {};
+    let count = 0;
     console.log(page, limit);
-    const products = await Product.find({ ...req.query })
+    if (!isNaN(le) || !isNaN(ge)) {
+      filter = {
+        currentPrice: { $multiply: ["$saleFlash", "$oldPrice", 0.01] },
+        currentPrice: { $in: [+ge, +le] },
+      };
+      // count = await Product.find({brand})
+    }
+
+    if (brand) {
+      filter = { brand };
+      const brands = await Product.find({ brand });
+      count = brands.length;
+    }
+    const products = await Product.find(filter)
       // We multiply the "limit" variables by one just to make sure we pass a number and not a string
       .limit(limit * 1)
       .skip((page - 1) * limit)
       // We sort the data by the date of their creation in descending order (user 1 instead of -1 to get ascending order)
       .sort({ createdAt: -1 });
-
     // Getting the numbers of products stored in database
-    const count = await Product.countDocuments();
-
+    if (!brand) {
+      count = await Product.countDocuments();
+    }
+    // if (products.length < count) count = products.length;
     return res.status(200).json({
       products,
       totalPages: Math.ceil(count / limit),
