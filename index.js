@@ -8,6 +8,7 @@ import cors from "cors";
 import { handleError, showError } from "./src/middlewares/handleError.js";
 import brandRouter from "./src/routes/v2/Brand.Router.js";
 import cartRouter from "./src/routes/v2/Cart.Router.js";
+import verifyToken from "./src/middlewares/verifyToken.js";
 const app = express();
 const PORT = process.env.PORT || 5000;
 app.use(express.json());
@@ -20,7 +21,7 @@ app.use("/product", productRouter);
 app.use("/order", orderRouter);
 app.use("/category", categoryRouter);
 app.use("/brand", brandRouter);
-app.use("/cart", cartRouter);
+app.use("/cart", verifyToken, cartRouter);
 // app.get("/pagination", paginationProduct);
 app.use(handleError, showError);
 app.listen(PORT, () => {

@@ -4,6 +4,7 @@ const products = [
     name: "Tire WARRIOR HUB",
     quantity: 10,
     brand: "KIA",
+    currentPrice: 144,
     oldPrice: 180,
     imgSrc: [
       "https://bizweb.dktcdn.net/thumb/large/100/364/158/products/lopxe3.jpg?v=1567905623343",
@@ -18,7 +19,7 @@ const products = [
       "https://bizweb.dktcdn.net/thumb/grande/100/364/158/products/product9.jpg?v=1569858570373",
     ],
     categoryId: "635149150200575f12569d96",
-    saleFlash: "20",
+    saleFlash: 20,
     desc: 'Michelin Energy XM2 195/70R14 Tires have long life and high fuel efficiency, providing maximum safety for your daily travel needs. Rolling resistance is reduced by 8% to reduce fuel consumption. Back-and-forth bridging technology enhances the stiffness of the spike block. With increased rigidity, the tread block is less free to move, reducing tire wear Rate The linkage blocks with "cross-bridging technique" limit flexibility, prevent the tire...',
   },
   {
@@ -27,7 +28,8 @@ const products = [
     name: "Accessory KUMHO ECSTA",
     quantity: 10,
     brand: "KIA",
-    // currentPrice: "1200000",
+    currentPrice: 128,
+
     oldPrice: 160,
     imgSrc: [
       "https://bizweb.dktcdn.net/thumb/large/100/364/158/products/lopxe2.jpg?v=1567905531910",
@@ -46,9 +48,10 @@ const products = [
   {
     // types: "smartDevice",
     categoryId: "635149150200575f12569d99",
-    name: "RADIO Ô TÔ",
+    name: "RADIO Auto",
     quantity: 10,
-    // currentPrice: "1200000",
+    currentPrice: 120,
+
     oldPrice: 150,
     brand: "SamSung",
     imgSrc: [
@@ -63,13 +66,14 @@ const products = [
       "https://bizweb.dktcdn.net/thumb/large/100/364/158/products/product5.jpg?v=1569857958077",
       "https://bizweb.dktcdn.net/thumb/grande/100/364/158/products/product9.jpg?v=1569858570373",
     ],
-    saleFlash: "20",
+    saleFlash: 20,
     desc: "Color LCD display, clear and bright, dynamic Bluetooth connection. Built-in microphone, support hands-free calls Digital high-quality FM stereo radio, stores up to 18 FM presets (frequency: 87.5-108 MHz). Repeat/Random/Intro play Digital Clock display Support music file playback from USB disk/SD card Support audio: MP3/WMA/APE/FLAC/WAV, etc AUX audio input and L/R RCA audio output jacks Remote control with full functions, more convenient and simple to use. NOTE: This product does not support CD, VCD, DVD disc playback. Specifications: Color: Black Material: Plastic Voltage: 12V Output power: 4x60W Bluetooth version: 3.0 Bluetooth distance: 10 meters Function: Bluetooth, handsfree, FM..",
   },
   {
     categoryId: "635149150200575f12569d9a",
     // types: "smartDevice",
     name: "Amazon Cloud Cam Security Camera LCD HD 1080P",
+    currentPrice: 640,
     quantity: 10,
     oldPrice: 800,
     brand: "AOC",
@@ -93,7 +97,7 @@ const products = [
     categoryId: "635149150200575f12569d9b",
     name: "Screen LCD Auto 1080p",
     quantity: 10,
-    // currentPrice: "1300000",
+    currentPrice: 104,
     brand: "LG",
     oldPrice: 130,
     imgSrc: [
@@ -118,7 +122,7 @@ const products = [
     name: "Radio auto 2",
     quantity: 10,
     brand: "LG",
-    // currentPrice: "600000",
+    currentPrice: 160,
     oldPrice: 200,
     imgSrc: [
       "https://bizweb.dktcdn.net/thumb/grande/100/364/158/products/product13.jpg?v=1569858918530",
@@ -142,7 +146,7 @@ const products = [
     name: "Steering Wheel",
     quantity: 10,
     brand: "MoMo",
-    // currentPrice: "1000000",
+    currentPrice: 80,
     oldPrice: 100,
     imgSrc: [
       "https://bizweb.dktcdn.net/thumb/grande/100/364/158/products/product9.jpg?v=1569858570373",
@@ -165,6 +169,7 @@ const products = [
     name: "Wheel rim",
     quantity: 10,
     brand: "KIA",
+    currentPrice: 640,
     oldPrice: 800,
     imgSrc: [
       "https://bizweb.dktcdn.net/thumb/large/100/364/158/products/hankook-dynapro-at-m-rf10.jpg?v=1567590433397",
@@ -187,7 +192,8 @@ const products = [
     name: "Oil Castrol Magnatec 10W40 (4L)",
     quantity: 10,
     brand: "Castrol",
-    // currentPrice: "460000",
+    currentPrice: 480,
+
     oldPrice: 600,
     imgSrc: [
       "https://bizweb.dktcdn.net/thumb/large/100/364/158/products/product5.jpg?v=1569857958077",
@@ -210,7 +216,7 @@ const products = [
     categoryId: "635149150200575f12569d96",
     quantity: 10,
     brand: "BRIGGS",
-    // currentPrice: "500000",
+    currentPrice: 640,
     oldPrice: 800,
     imgSrc: [
       "https://bizweb.dktcdn.net/thumb/grande/100/364/158/products/product4.jpg?v=1569857836727",

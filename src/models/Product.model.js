@@ -17,12 +17,16 @@ const productSchema = mongoose.Schema(
     //   required: true,
     // },
     name: {
-      type: "String",
+      type: String,
       required: true,
       unique: true,
     },
     oldPrice: {
-      type: "Number",
+      type: Number,
+      default: 0,
+    },
+    currentPrice: {
+      type: Number,
       default: 0,
     },
     imgSrc: {
@@ -30,16 +34,16 @@ const productSchema = mongoose.Schema(
       required: true,
     },
     saleFlash: {
-      type: "Number",
+      type: Number,
       default: 0,
     },
     desc: {
-      type: "String",
+      type: String,
       required: true,
     },
     // brandId: String,
     quantity: {
-      type: "Number",
+      type: Number,
       required: true,
     },
     // productId: {

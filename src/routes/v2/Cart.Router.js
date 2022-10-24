@@ -1,6 +1,11 @@
 import { Router } from "express";
-import { getCart } from "../../controllers/Cart.control.js";
-import verifyToken from "../../middlewares/verifyToken.js";
+import {
+  clearCart,
+  createCart,
+  getCart,
+} from "../../controllers/Cart.control.js";
 const router = new Router();
-router.get("/", verifyToken, getCart);
+router.get("/", getCart);
+router.post("/", createCart);
+router.delete("/", clearCart);
 export default router;

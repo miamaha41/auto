@@ -43,8 +43,8 @@ export const login = async (req, res, next) => {
     const accessToken = await signToken(
       user._id,
       process.env.ACCESS_TOKEN_SECRET,
-      "10m",
-      false
+      "1y",
+      true
     );
     const refreshToken = await signToken(
       user._id,
