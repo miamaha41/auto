@@ -2,7 +2,10 @@ import mongoose from "mongoose";
 import { newMongoDBConn } from "../services/mongoDb.js";
 
 const cartSchema = new mongoose.Schema({
-  userId: mongoose.Schema.Types.ObjectId,
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "user",
+  },
   products: [
     {
       productId: {
@@ -13,6 +16,7 @@ const cartSchema = new mongoose.Schema({
       name: String,
       currentPrice: Number,
       imgSrc: String,
+      productQuantity: Number,
     },
   ],
   bill: Number,
