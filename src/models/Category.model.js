@@ -17,5 +17,5 @@ const categorySchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-const Category = newMongoDBConn.model("category", categorySchema);
+const Category = newMongoDBConn.model("categories", categorySchema);
 export default Category;

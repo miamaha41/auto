@@ -2,9 +2,9 @@ import mongoose from "mongoose";
 import { newMongoDBConn } from "../services/mongoDb.js";
 const product = mongoose.Schema({
   productId: {
-    // type: mongoose.Schema.Types.ObjectId,
-    // ref: "Product",
-    type: "String",
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Product",
+    // type: "String",
     required: true,
     unique: true,
   },
@@ -16,9 +16,15 @@ const product = mongoose.Schema({
 });
 const orderSchema = new mongoose.Schema(
   {
-    cartId: Number,
+    cartId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "cart",
+    },
     orderId: Number,
-    userId: Number,
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "cart",
+    },
     shipping: {
       email: {
         type: "String",

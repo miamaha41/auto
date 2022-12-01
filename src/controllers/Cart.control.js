@@ -72,8 +72,7 @@ export const createCart = async (req, res) => {
       return res.status(201).send(newCart);
     }
   } catch (error) {
-    console.log(error);
-    res.status(500).send("something went wrong");
+    res.status(500).send("Something went wrong");
   }
 };
 export const clearCart = async (req, res) => {
@@ -86,4 +85,26 @@ export const clearCart = async (req, res) => {
   } catch (error) {
     console.log(error);
   }
+};
+export const updateCart = async (req, res) => {
+  try {
+    const userId = req.payload.userId;
+    const { products } = req.body;
+    const bill = products.reduce((acc, curr) => {
+      return acc + curr.quantity * curr.currentPrice;
+    }, 0);
+    const cart = await Cart.findOneAndUpdate({ userId }, { products, bill });
+    res.send(cart);
+  } catch (error) {
+    console.log(error);
+  }
+  // newProducts.map(({
+  //   productId,
+  //   name,
+  //   quantity,
+  //   currentPrice,
+  //   imgSrc
+  // }) => { productId,
+  //   name,currentPrice,imgSrc : imgSrc[0]})
+  // const cart = await Cart.findOneAndUpdate({ userId },{products:newProducts});
 };

@@ -18,7 +18,7 @@ app.use(cors());
 // });
 app.use("/user", userRouter);
 app.use("/product", productRouter);
-app.use("/order", orderRouter);
+app.use("/order", verifyToken, orderRouter);
 app.use("/category", categoryRouter);
 app.use("/brand", brandRouter);
 app.use("/cart", verifyToken, cartRouter);
